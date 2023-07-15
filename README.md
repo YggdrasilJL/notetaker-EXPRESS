@@ -13,8 +13,10 @@ To use the Note Taker do the following:
 - If you want to create a new note, press the "+" icon on the upper right hand side of the page.
 - Once you are done with your note, click the red trash can icon next to the note and your note will be deleted.
 
-## Screenshot
-![logo and terminal](examples/screenshot.png)
+## Screenshots
+![Notes](public/assets/images/1.png)
+![displaying note](public/assets/images/2.png)
+![creating note](public/assets/images/3.png)
 
 ## Deployed Link
 
@@ -23,12 +25,12 @@ To use the Note Taker do the following:
 ## Technologies used
 
 - JavaScript
-- SVG
+- Express.js
 
 - Node.js
-    - Jest npm
-    - Inquirer npm
-    - fs npm
+    - Nodemon package
+    - fs package
+    - uuid package
 
 # Credits
 

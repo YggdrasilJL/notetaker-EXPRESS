@@ -1,5 +1,5 @@
 * {
-  font-family: 'Lugrasimo', sans-serif;
+  font-family: 'Pangolin', sans-serif;
 }
 
 html,
@@ -74,6 +74,14 @@ nav {
   background-color: #95b891;
 }
 
+span {
+  font-size: 2vh;
+}
+
+textarea {
+  font-size: 2vh;
+}
+
 .list-container .list-group,
 .list-container .list-group-item:first-child,
 .list-container .card {
@@ -88,7 +96,7 @@ nav {
 }
 
 .list-container i {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   cursor: pointer;
 }
 
