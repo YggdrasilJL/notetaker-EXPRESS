@@ -1,4 +1,5 @@
 const express = require('express');
+const {v4: uuid} = require('uuid')
 const fs = require('fs')
 const path = require('path')
 const app = express();
@@ -29,8 +30,27 @@ app.get('/api/notes', (req, res) => {
 })
 app.post('/api/notes', (req, res) => {
     const {title, text} = req.body
-    fs.readFile('./db/db.json', 'utf8', err => {
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+        if (err) {
         console.log('error occurred,', err)
+        } else {
+        const notes = JSON.parse(data)
+        const newNote = {
+            title,
+            text,
+            id: uuid()
+        }
+        notes.push(newNote)
+        const updatedNotes = JSON.stringify(notes)
+        fs.writeFile('./db/db.json', updatedNotes, (err) => {
+            if (err) {
+                console.log('Unable to write file', err)
+            } else {
+                console.log('file saved successfully.')
+                res.json(newNote)
+            }
+        })
+    }
     })
 
 })
