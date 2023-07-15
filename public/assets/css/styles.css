@@ -1,8 +1,22 @@
+* {
+  font-family: 'Lugrasimo', sans-serif;
+}
+
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #b1dbac !important;
+}
+
+nav {
+  background-color: rgb(102, 164, 164);
+}
+
+.bg {
+  background-color: #b7e9b1;
+  border-radius: 2vh;
 }
 
 .save-note {
@@ -16,8 +30,13 @@ body {
   cursor: pointer;
 }
 
+.list-group-item {
+  background-color: #b7e9b1;
+}
+
 .note-textarea,
 .note-title {
+  background-color: #b1dbac;
   color: #000000;
   width: 100%;
   outline: none;
@@ -38,10 +57,12 @@ body {
 
 .note-title:read-only,
 .note-textarea:read-only {
+  background-color: #b1dbac;
   color: #757575;
 }
 
 .list-container .card {
+  background-color: #a1c79d;
   height: calc(100vh - 70px);
   border-bottom: none;
   border-bottom-right-radius: 0;
@@ -50,6 +71,7 @@ body {
 
 .list-container {
   padding-left: 0;
+  background-color: #95b891;
 }
 
 .list-container .list-group,
