@@ -98,3 +98,7 @@ nav {
   padding: 20px;
   cursor: pointer;
 }
+
+.delete-note:hover {
+  background-color: #000000 !important;
+}

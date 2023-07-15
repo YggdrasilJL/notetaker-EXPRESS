@@ -39,7 +39,9 @@ app.delete('/api/notes/:id', (req, res) => {
           res.status(500).json({ error: 'An error occurred while reading the data.' })
         } else {
           const notes = JSON.parse(data)
-          const note = notes.find(note => note.id === noteID)
+          // findIndex() searches the index which works with splice(), where as find() does not 
+          const note = notes.findIndex(note => note.id === noteID)
+          console.log('this is the note:', note)
          // when nothing is found in the find() method, it returns a '-1', hence the code below 
           if (note !== -1) {
             notes.splice(note, 1)
