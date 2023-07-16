@@ -1,6 +1,6 @@
 # Note Taker Express.js
 
-This is a back-end Note Taker project that connects to the front end using Express.js.
+This is a back-end project that allows you to create, save and delete notes and connects to the front end using Express.js, also writes each saved note to the api/notes URL.
 
 ## Usage
 
