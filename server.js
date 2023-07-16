@@ -3,22 +3,23 @@ const {v4: uuid} = require('uuid')
 const fs = require('fs')
 const path = require('path')
 const app = express()
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 
-
+// middleware to make things work easier
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+// tells express to look in the 'public' folder for stylesheet and stuff
 app.use(express.static('public'))
 
 // identifies index.html as the root url, basically the main page.
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'))
 })
-
+// when the url navigates to /notes it sends the notes.html file
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'))
 })
-
+// this is getting the contents of the db.json file
 app.get('/api/notes', (req, res) => {
     fs.readFile('./db/db.json', 'utf8', (err, data) => {
         if (err) {
@@ -29,7 +30,7 @@ app.get('/api/notes', (req, res) => {
         }
     })
 })
-
+// finds the id's of each note 
 app.delete('/api/notes/:id', (req, res) => {
     if (req.params.id) {
       const noteID = req.params.id
@@ -66,7 +67,7 @@ app.delete('/api/notes/:id', (req, res) => {
     }
   })
   
-
+// writes the user inputs to the db.json
 app.post('/api/notes', (req, res) => {
     const {title, text} = req.body
     fs.readFile('./db/db.json', 'utf8', (err, data) => {

@@ -106,7 +106,7 @@ textarea {
   padding: 20px;
   cursor: pointer;
 }
-
+/* emphasizes the delete button  */
 .delete-note:hover {
   background-color: #000000 !important;
 }

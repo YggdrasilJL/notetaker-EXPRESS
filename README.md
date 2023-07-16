@@ -20,7 +20,7 @@ To use the Note Taker do the following:
 
 ## Deployed Link
 
-[Here]() is the link to the note taker application.
+[Here](https://frozen-everglades-91942-57734860147e.herokuapp.com/) is the link to the note taker application.
 
 ## Technologies used
 
